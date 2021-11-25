@@ -1,0 +1,14 @@
+1. Menu d'accueil 
+    - username
+    - difficulty
+    - play button
+
+2. Jeu
+    - Variables
+        Jeux False
+        Bases.taille = 1xdifficulty
+        for i in range(difficulty):
+            creation disque.i
+        
+
+    - Boucle while True
