@@ -1,27 +1,30 @@
-# Classe qui définit le jeu
+# Classe qui dï¿½finit le jeu
 import pygame
-from players import Player1
-from players import Player2
+from disks import Disks1
+from disks import Disks2
+from disks import Disks3
+from disks import Disks4
+from disks import Disks5
 from ball import Ball
 class Partie():
     # liaison entre le main et les entitÃ©s
     def __init__(self):
         super().__init__()
         self.ball = Ball()
-        self.player1 = Player1()
-        self.player2 = Player2()
-        # Crétion d'un dico qui définit l'Ã©tat des touche (True si elle est pressée, False si la touche ne l'est plus)
+        self.disks1 = Disks1()
+        self.disks2 = Disks2()
+        # Crï¿½tion d'un dico qui dï¿½finit l'Ã©tat des touche (True si elle est pressï¿½e, False si la touche ne l'est plus)
         self.pressed = {}
         self.ply = None
         self.score = {}
         
     def check_collision(self):
-        if self.ball.rect.midleft <= self.player1.rect.right and self.ball.rect.midleft >= self.player1.rect.left:
-            if self.ball.rect.centery >= self.player1.rect.top and self.ball.rect.centery >= self.player1.rect.bottom:
+        if self.ball.rect.midleft <= self.disks1.rect.right and self.ball.rect.midleft >= self.disks1.rect.left:
+            if self.ball.rect.centery >= self.disks1.rect.top and self.ball.rect.centery >= self.disks1.rect.bottom:
                 self.ply = 1
                 return True
-        if self.ball.rect.midleft >= self.player2.rect.right and self.ball.rect.midleft <= self.player2.rect.left:
-            if self.ball.rect.centery >= self.player2.rect.top and self.ball.rect.centery <= self.player2.rect.bottom:
+        if self.ball.rect.midleft >= self.disks2.rect.right and self.ball.rect.midleft <= self.disks2.rect.left:
+            if self.ball.rect.centery >= self.disks2.rect.top and self.ball.rect.centery <= self.disks2.rect.bottom:
                 self.ply = 2
                 return True
                 
@@ -51,9 +54,9 @@ class Partie():
             if self.check_collision():
                 if self.ply == 1:
                     self.depx = self.vitesse
-                    if  self.rect.y < self.player1.rect.y + 30:
+                    if  self.rect.y < self.disks1.rect.y + 30:
                         self.depy = self.vitesse/2
-                    elif  self.rect.y > self.player1.rect.y + 70:
+                    elif  self.rect.y > self.disks1.rect.y + 70:
                         self.depy = -self.vitesse/2
                     else:
                         self.depy = 0
