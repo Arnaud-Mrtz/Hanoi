@@ -1,10 +1,13 @@
-def hanoi(n,de,a,par):
+def hanoi(n, de , a, par):
+    
     if n>0:
-        hanoi(n-1, de, par, a)
+        hanoi(n-1,de, par, a)
         a.append(de[len(de)-1])
         de.pop()
         print("""
-        Tour n° chep""")
+
+            Etape suivante :
+        """)
         print("Base 1"+str(A))
         print("Base 2"+str(B))
         print("Base 3"+str(C))
@@ -22,3 +25,4 @@ for i in range(n):
     A.append(Disks[i+(len(Disks)-n)])
 print(A)
 hanoi(n,A,C,B)
+print("Bon jeu.")
