@@ -1,11 +1,7 @@
 # Classe qui d�finit le jeu
 import pygame
-from disks import Disks1
-from disks import Disks2
-from disks import Disks3
-from disks import Disks4
-from disks import Disks5
-from ball import Ball
+from disks import Disks1, Disks2, Disks3, Disks4, Disks5
+from bases import Base1,Base2,Base3
 class Partie():
     # liaison entre le main et les entités
     def __init__(self):

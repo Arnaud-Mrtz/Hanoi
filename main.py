@@ -20,12 +20,17 @@ partie = Partie()
 score = {}
 ply = None
 # Boucle du jeu
-
+n=5
 while True:
     # Insertion du fond d'écran 
     screen.blit(background, (0, 0))
 
     # Affichage des entités
+        # Affichage des Bases
+    screen.blit(partie.base)
+
+    screen.blit(partie.player1.image, partie.player1.rect)
+    screen.blit(partie.player2.image, partie.player2.rect)
     screen.blit(partie.player1.image, partie.player1.rect)
     screen.blit(partie.player2.image, partie.player2.rect)
     screen.blit(partie.ball.image, partie.ball.rect)
@@ -33,6 +38,7 @@ while True:
     for dem in pygame.event.get():
         if dem.type == pygame.KEYDOWN:
             if dem.key == pygame.K_SPACE:
+                # Etat du du jeu (True s'il est en execution)
                 continuer = True
     while continuer:
             # Definir si les joueurs veulent se déplacer vers le haut ou le bas
