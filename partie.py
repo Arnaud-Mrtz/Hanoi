@@ -14,29 +14,7 @@ class Partie():
         self.ply = None
         self.score = {}
         
-    def check_collision(self):
-        if self.ball.rect.midleft <= self.disks1.rect.right and self.ball.rect.midleft >= self.disks1.rect.left:
-            if self.ball.rect.centery >= self.disks1.rect.top and self.ball.rect.centery >= self.disks1.rect.bottom:
-                self.ply = 1
-                return True
-        if self.ball.rect.midleft >= self.disks2.rect.right and self.ball.rect.midleft <= self.disks2.rect.left:
-            if self.ball.rect.centery >= self.disks2.rect.top and self.ball.rect.centery <= self.disks2.rect.bottom:
-                self.ply = 2
-                return True
                 
-            
-    def check_victory(self):
-        xcor = self.ball.rect.x
-        if xcor < 20 or xcor >= pygame.display.get_surface().get_width() - 20:
-            if self.score.has_key("Joueur : {}".format(self.ply)):
-                self.score[("Joueur : {}".format(self.ply))] += 1
-                mouv = False
-                return True
-            else:
-                self.score[("Joueur : {}".format(self.ply))] = 1
-                mouv = False
-                return True
-
 
     def ball_mouv(self):
         mouv = True
