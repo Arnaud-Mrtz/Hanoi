@@ -1,38 +1,26 @@
-# Classe qui d�finit le jeu
+                                # Classe qui définit le jeu
 import pygame
-from disks import Disks1, Disks2, Disks3, Disks4, Disks5
+from disks import Disks1, Disks2, Disks3, Disks4, Disks5, Disks6, Disks7, Disks8, Disks9, Disks10
 from bases import Base1,Base2,Base3
 class Partie():
     # liaison entre le main et les entités
     def __init__(self):
         super().__init__()
-        self.ball = Ball()
+        self.base1 = Base1()
+        self.base2= Base2()
+        self.base3 = Base3()
         self.disks1 = Disks1()
         self.disks2 = Disks2()
-        # Cr�tion d'un dico qui d�finit l'état des touche (True si elle est press�e, False si la touche ne l'est plus)
+        self.disks3 = Disks3()
+        self.disks4 = Disks4()
+        self.disks5 = Disks5()
+        self.disks1 = Disks6()
+        self.disks2 = Disks7()
+        self.disks3 = Disks8()
+        self.disks4 = Disks9()
+        self.disks5 = Disks10()
+        # Crétion d'un dico qui définit l'état des touche (True si elle est pressée, False quand la touche ne l'est plus)
         self.pressed = {}
-        self.ply = None
-        self.score = {}
         
-                
 
-    def ball_mouv(self):
-        mouv = True
-        self.depx = self.vitesse
-        self.depy = 0
-        self.ply = 1
-        if mouv == True:
-            self.check_victory()
-            self.rotate()
-            self.rect.move(self.depx, self.depy)
-            if self.check_collision():
-                if self.ply == 1:
-                    self.depx = self.vitesse
-                    if  self.rect.y < self.disks1.rect.y + 30:
-                        self.depy = self.vitesse/2
-                    elif  self.rect.y > self.disks1.rect.y + 70:
-                        self.depy = -self.vitesse/2
-                    else:
-                        self.depy = 0
-                else:
-                    self.vitesse += 1
+
