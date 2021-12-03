@@ -21,6 +21,3 @@ class Partie():
         self.disks5 = Disks10()
         # Crétion d'un dico qui définit l'état des touche (True si elle est pressée, False quand la touche ne l'est plus)
         self.pressed = {}
-        
-
-

@@ -17,8 +17,6 @@ background = pygame.image.load('assets/background.jpg')
 partie = Partie()
 
 
-while True:
-# Boucle d'affichage
 
 
 # Insertion du fond d'écran 
@@ -30,18 +28,16 @@ screen.blit(background, (0, 0))
 # screen.blit(partie.base2.image, partie.base2.rect)
 # screen.blit(partie.base3.image, partie.base3.rect)
 
-#     # Affichage des Disques
+     # Affichage des Disques
 # screen.blit(partie.disk1.image, partie.disk1.rect)
-
-
-
-#Foncction résolution automatique
+# Fonction résolution automatique
 def resolution(n, de , a, par):
     
     if n>0:
         resolution(n-1,de, par, a)
-
+        #système de pile (ce qu'on dépile à de, on l'empile à a)
         a.append(de[len(de)-1])
+        partie.go_up()
         de.pop()
 
         print("""
