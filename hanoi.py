@@ -32,12 +32,25 @@ screen.blit(background, (0, 0))
 # screen.blit(partie.disk1.image, partie.disk1.rect)
 # Fonction résolution automatique
 def resolution(n, de , a, par):
-    
+
+    disk = globals()[de[len(de)-1]]
+    if de == A:
+        base_de = 1
+    elif de == B:
+        base_de = 2
+    elif de == C:
+        base_de = 3
+    if a == A:
+        base_a = 1
+    elif a == B:
+        base_a = 2
+    elif a == C:
+        base_a = 3
     if n>0:
         resolution(n-1,de, par, a)
         #système de pile (ce qu'on dépile à de, on l'empile à a)
         a.append(de[len(de)-1])
-        partie.go_up()
+        partie.deplacement(disk, base_de, base_a, len(de), len(de))
         de.pop()
 
         print("""
@@ -49,7 +62,7 @@ def resolution(n, de , a, par):
         print("Base 3"+str(C))
         
         resolution(n-1, par, a, de)
-Disks=["Disque 10","Disque 9","Disque 8","Disque 7","Disque 6","Disque 5","Disque 4","Disque 3","Disque 2","Disque 1"]
+Disks=["disks10","disks9","disks8","disks7","disks6","disks5","disks4","disks3","disks2","disks1"]
 A=[]
 B=[]
 C=[]
