@@ -1,2 +1,3 @@
 # Hanoi
-Jeu hanoi en python
+Résoplution du jeu hanoi en python
+    -Jeu Hanoi en python prévu.
