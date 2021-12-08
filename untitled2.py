@@ -1,19 +1,15 @@
 class Domino:
 	def __init__(self, face_a, face_b):
-		print("Votre Domino : [{}-{}]".format(face_a, face_b))
 		white = self.white(face_a, face_b)
 		double = self.double(face_a, face_b)
-		print(white, double)
 		self.state(white, double, face_a, face_b)
 	def white(self, face_a, face_b):
 		if face_a == 0 or face_b == 0:
 			return True
 	def double(self, face_a, face_b):
-		print(face_a, face_b)
 		if face_a == face_b:
 			return True
 	def state(self, white, double, face_a, face_b):
-		print("Votre Domino : [{}-{}]".format(face_a, face_b))
 		if white and double:
 			print("Votre Domino : [{}-{}]".format(face_a, face_b),"est un double blanc")
 		elif white:
