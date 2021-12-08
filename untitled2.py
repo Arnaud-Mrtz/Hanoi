@@ -1,25 +1,26 @@
 class Domino:
-
 	def __init__(self, face_a, face_b):
 		print("Votre Domino : [{}-{}]".format(face_a, face_b))
-		self.val_a, self.val_b = int(face_a), int(face_b)
-	def white(self, val_a, val_b):
-		if self.val_a == 0 or self.val_b == 0:
-			self.white = True
-	def double(self, val_a, val_b):
-		if self.val_a == self.val_b:
-			self.double = True
-	def state(self, white, double):
+		white = self.white(face_a, face_b)
+		double = self.double(face_a, face_b)
+		print(white, double)
+		self.state(white, double, face_a, face_b)
+	def white(self, face_a, face_b):
+		if face_a == 0 or face_b == 0:
+			return True
+	def double(self, face_a, face_b):
+		print(face_a, face_b)
+		if face_a == face_b:
+			return True
+	def state(self, white, double, face_a, face_b):
 		print("Votre Domino : [{}-{}]".format(face_a, face_b))
 		if white and double:
-			print("""	est double blanc""")
+			print("Votre Domino : [{}-{}]".format(face_a, face_b),"est un double blanc")
 		elif white:
-			print("""	est blanc""")
+			print("Votre Domino : [{}-{}]".format(face_a, face_b),"possède un côté blanc")
 		elif double:
-			print("""	est double""")
+			print("Votre Domino : [{}-{}]".format(face_a, face_b),"est un double")
 		else:
-			print("""	n'est ni double ni blanc""")
-
-
-face_a = str(input("1re face du Domino : "))
-face_b = str(input("2e face du Domino : "))
+			print("Votre Domino : [{}-{}]".format(face_a, face_b),"n'est ni double et ne possède pas de blanc")
+		print("Sa valeur est de",str(face_a+face_b))
+Domino(int(input("1re face du Domino : ")), int(input("2e face du Domino : ")))
